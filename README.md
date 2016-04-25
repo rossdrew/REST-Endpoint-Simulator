@@ -24,3 +24,7 @@ It is run by running the script followed by the port it should run on, followed 
 ```
 python endpointSim.py 8081 Test
 ```
+
+#Limitations
+
+So far it's a little rough and very limited.  For example, in [web.py](http://webpy.org/), the tuple _urls_ needs to be ordered by most specific first.  Otherwise all URLs will match '_/(.*)_' and all be routed to the _base_ class.  I'll need to maybe write an ordering method to make sure classes don't interfere with each other.
