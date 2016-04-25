@@ -4,7 +4,7 @@ Python script to spin up some simple endpoints for simulating services.
 
 #Usage
 
-To spin up an endpoint, create a Python script in the same directory, make sure there is a [web.py](http://webpy.org/) style URL mapping/class tuple structure to define the mapping and what class it should point to.
+To spin up an endpoint, create a Python script in the same directory, make sure there is a [web.py](http://webpy.org/) style URL mapping/class tuple structure to define the mapping and what endpoint class it should point to.
 The only difference here is that the class name needs to be prefixed by the package name, like so:-
 
 ```python
