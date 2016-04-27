@@ -19,7 +19,6 @@ def importAllEndpointFiles(endpointDefinitions, urls):
 			importlib.import_module(enpointFile)
 			urlList = sys.modules[enpointFile].urls
 			completeUrlList += urlList
-			#command_module.run()  ##What's this for?
 			print "Imported {}.py presenting the endpoints {}".format(enpointFile, urlList)
 		except ImportError:
 			print "Cannot import {}".format(enpointFile)
