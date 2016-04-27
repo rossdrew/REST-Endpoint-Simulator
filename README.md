@@ -1,6 +1,6 @@
 #endpointSim
 
-Python script to spin up some simple endpoints for simulating services. 
+Python script to spin up some simple REST endpoints for simulating services. 
 
 #Usage
 
