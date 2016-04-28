@@ -7,10 +7,7 @@ urls = ('/(.*)', 'base')
 
 def importAllEndpointFiles(endpointDefinitions, urls):
 	""" Import all python files from endpointDefinitions and 
-	    add their urls to the presented ones.
-
-		>>> importAllEndpointFiles (['Test'])
-		('/(.*)', 'base', '/Test/(.*)', 'test')"""
+	add their urls to the presented ones."""
 
 	completeUrlList = ()
 	for enpointFile in endpointDefinitions:
@@ -45,4 +42,4 @@ class base:
         return programID
 
 if __name__ == "__main__":
-    app.run()
+	app.run()
