@@ -1,7 +1,7 @@
 
 print "Test imported..."
 
-urls = ('/Test', 'Test.test')
+urls = ('/Test/(.*)', 'Test.test')
 
 def getURLS():
 	return urls
