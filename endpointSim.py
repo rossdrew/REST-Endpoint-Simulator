@@ -1,6 +1,7 @@
 import web
 import sys
 import importlib
+from operator import itemgetter #sorting urls
 
 programID = "Endpoint Simulator v0.1"
 urls = ('/(.*)', 'base')
@@ -23,14 +24,22 @@ def importAllEndpointFiles(endpointDefinitions, urls):
 	completeUrlList += urls
 	return completeUrlList
 
-#TODO Need to order these 
-#So I'll want to be able to add to this and have them ordered by granualty, most fine-grained first
+def sortURLs(urls):
+	""" Order URLs by how specific they are so that they 
+	are matched in the correct order, ordered by granualty, 
+	most fine-grained first"""
+	kv = zip(urls[::2], urls[1::2]) 
+	s = sorted(kv, key=itemgetter(0), reverse=True)
+	sortedUrls = tuple(x for pair in s 
+					      for x in pair)
+	return sortedUrls
+
 allUrls = importAllEndpointFiles(sys.argv[2:], urls)
-print "Offering : \n{}".format(allUrls)
+allUrlsSorted = sortURLs(allUrls)
+print "Offering : \n{}".format(allUrlsSorted)
 
 #Classes in 'urls' inside packages need to be prefixed with the package name, e.g. 'Test.test'
 app = web.application(allUrls, locals())
-
 
 
 ################################
