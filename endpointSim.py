@@ -30,8 +30,7 @@ def sortURLs(urls):
 	most fine-grained first"""
 	kv = zip(urls[::2], urls[1::2]) 
 	s = sorted(kv, key=itemgetter(0), reverse=True)
-	sortedUrls = tuple(x for pair in s 
-					      for x in pair)
+	sortedUrls = tuple(x for pair in s for x in pair)
 	return sortedUrls
 
 allUrls = importAllEndpointFiles(sys.argv[2:], urls)
