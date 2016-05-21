@@ -37,6 +37,7 @@ allUrls = importAllEndpointFiles(sys.argv[2:], urls)
 allUrlsSorted = sortURLs(allUrls)
 print "Offering : \n{}".format(allUrlsSorted)
 
+#TODO: Maybe remove the need for this by prepending it on import?
 #Classes in 'urls' inside packages need to be prefixed with the package name, e.g. 'Test.test'
 app = web.application(allUrls, locals())
 
