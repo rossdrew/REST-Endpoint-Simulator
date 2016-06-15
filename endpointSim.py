@@ -8,7 +8,7 @@ urls = ('/(.*)', 'base')
 
 def prependPackageToClassnames(urls, packageName):
 	"""Take web.py formatted url/endpoint tuples and prepend 
-	a packageName to each of the endpoints, e.g.
+	a packageName to each of the endpoint classnames, e.g.
 
 	('/Test/(.*)', 'test') becomes ('/Test/(.*)', 'Test.test')
 	
