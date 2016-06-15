@@ -45,14 +45,14 @@ def sortURLs(urls):
 	most fine-grained first"""
 	kv = zip(urls[::2], urls[1::2]) 
 	s = sorted(kv, key=itemgetter(0), reverse=True)
-	sortedUrls = tuple(x for pair in s 
-					      for x in pair)
+	sortedUrls = tuple(x for pair in s for x in pair)
 	return sortedUrls
 
 allUrls = importAllEndpointFiles(sys.argv[2:], urls)
 allUrlsSorted = sortURLs(allUrls)
 print "Offering : \n{}".format(allUrlsSorted)
 
+#TODO: Maybe remove the need for this by prepending it on import?
 #Classes in 'urls' inside packages need to be prefixed with the package name, e.g. 'Test.test'
 app = web.application(allUrls, locals())
 
@@ -64,6 +64,10 @@ app = web.application(allUrls, locals())
 class base:        
     def GET(self, name):
         return programID
+
+################
+#  Entry Point #
+################
 
 if __name__ == "__main__":
 	app.run()
