@@ -1,12 +1,11 @@
 
 print "Test imported..."
 
-urls = ('/Test/(.*)', 'Test.test')
+urls = ('/Test/(.*)', 'test')
 
 def getURLS():
 	return urls
 
 class test:        
-    def GET(self):
-    	print "TEST HIT"
+    def GET(self, name):
         return "Test Endpoint!"
