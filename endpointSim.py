@@ -16,9 +16,8 @@ def prependPackageToClassnames(urls, packageName):
 	lst = list(urls)
 	for i in xrange(1, len(lst), 2):
   		lst[i] = packageName + "." + lst[i]
-	t = tuple(lst)
 
-	return t
+	return tuple(lst)
 
 def importAllEndpointFiles(endpointDefinitions, urls):
 	""" Import all python files from endpointDefinitions and 
