@@ -1,3 +1,5 @@
+#This file is here to be an example of an enpoint file and to be used by unit tests loading them
+
 urls = ('/Test/(.*)', 'test')
 
 def getURLS():
