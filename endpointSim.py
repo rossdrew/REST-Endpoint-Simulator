@@ -63,7 +63,7 @@ def sortURLs(urls):
 
 allUrls = importAllEndpointFiles(sys.argv[2:], urls)
 allUrlsSorted = sortURLs(allUrls)
-print "Offering : \n{}".format(allUrlsSorted)
+print "{} - Providing Endpoints :- \n{}".format(programID, allUrlsSorted)
 app = web.application(allUrls, locals())
 
 
