@@ -25,3 +25,9 @@ It is run by running the script followed by the port it should run on, followed 
 python endpointSim.py 8081 Test
 ```
 
+Unit tests are run automatically and halt the script if they fail but they can be run by themselves like so
+
+```
+python -m doctest endpointSim.py
+```
+
