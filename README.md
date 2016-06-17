@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rossdrew/endpointSim.py.svg?branch=master)](https://travis-ci.org/rossdrew/endpointSim.py)
+
 #endpointSim
 
 Python script to spin up some simple REST endpoints for simulating services. 
