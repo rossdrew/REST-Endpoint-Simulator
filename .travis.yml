@@ -3,7 +3,7 @@ python:
   - "3.5"
 # command to install dependencies
 install: 
-  - pip install web
+  - pip install web.py
   - pip install operator
 # command to run tests
 script: python -m doctest endpointSim.py
