@@ -1,6 +1,3 @@
-
-print "Test imported..."
-
 urls = ('/Test/(.*)', 'test')
 
 def getURLS():
