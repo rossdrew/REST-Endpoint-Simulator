@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.5"
+# command to install dependencies
+install: 
+  - pip install .
+  - pip install web
+  - pip install operator
+# command to run tests
+script: python -m doctest endpointSim.py
