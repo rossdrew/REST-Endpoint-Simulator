@@ -81,5 +81,8 @@ class base:
 
 if __name__ == "__main__":
 	import doctest
-	doctest.testmod()
+	failed, attempted = doctest.testmod()
+	if failed > 0:
+		print "Script terminated: {} of {} tests failed.".format(failed, attempted)
+		sys.exit()
 	app.run()
