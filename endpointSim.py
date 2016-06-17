@@ -1,6 +1,7 @@
 import web
 import sys
 import importlib
+import unittest, doctest
 from operator import itemgetter #sorting urls
 
 programID = "Endpoint Simulator v0.1"
@@ -12,7 +13,12 @@ def prependPackageToClassnames(urls, packageName):
 
 	('/Test/(.*)', 'test') becomes ('/Test/(.*)', 'Test.test')
 	
-	XXX There's probably a more Pythony way to do this"""
+	XXX There's probably a more Pythony way to do this
+
+	>>> prependPackageToClassnames(('/Test/(.*)', 'test'), 'PACKAGE')
+	('/Test/(.*)', 'PACKAGE.test')
+	>>> prependPackageToClassnames(('/Test/(.*)', 'test', '/Test/Test2', 'test2'), 'PACKAGE')
+	('/Test/(.*)', 'PACKAGE.test', '/Test/Test2', 'PACKAGE.test2')"""
 	lst = list(urls)
 	for i in xrange(1, len(lst), 2):
   		lst[i] = packageName + "." + lst[i]
@@ -21,7 +27,12 @@ def prependPackageToClassnames(urls, packageName):
 
 def importAllEndpointFiles(endpointDefinitions, urls):
 	""" Import all python files from endpointDefinitions and 
-	add their urls to the presented ones."""
+	add their urls to the presented ones.
+
+	>>> importAllEndpointFiles(['Test'], ('/existing/(.*)', 'existing'))
+	Attempting to import Test
+	Imported Test.py presenting the endpoints ('/Test/(.*)', 'Test.test')
+	('/Test/(.*)', 'Test.test', '/existing/(.*)', 'existing')"""
 
 	completeUrlList = ()
 	for endpointFile in endpointDefinitions:
@@ -41,7 +52,10 @@ def importAllEndpointFiles(endpointDefinitions, urls):
 def sortURLs(urls):
 	""" Order URLs by how specific they are so that they 
 	are matched in the correct order, ordered by granualty, 
-	most fine-grained first"""
+	most fine-grained first
+
+	>>> sortURLs(('/(.*)','base', '/a/(.*)','sub', '/a/b/(.*)','subsub'))
+	('/a/b/(.*)', 'subsub', '/a/(.*)', 'sub', '/(.*)', 'base')"""
 	kv = zip(urls[::2], urls[1::2]) 
 	s = sorted(kv, key=itemgetter(0), reverse=True)
 	sortedUrls = tuple(x for pair in s for x in pair)
@@ -50,7 +64,6 @@ def sortURLs(urls):
 allUrls = importAllEndpointFiles(sys.argv[2:], urls)
 allUrlsSorted = sortURLs(allUrls)
 print "Offering : \n{}".format(allUrlsSorted)
-
 app = web.application(allUrls, locals())
 
 
@@ -67,4 +80,6 @@ class base:
 ################
 
 if __name__ == "__main__":
+	import doctest
+	doctest.testmod()
 	app.run()
