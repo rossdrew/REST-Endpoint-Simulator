@@ -5,6 +5,5 @@ python:
 install: 
   - pip install --upgrade setuptools
   - pip install web.py
-  - pip install operator
 # command to run tests
 script: python -m doctest endpointSim.py
