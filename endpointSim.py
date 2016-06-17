@@ -19,11 +19,10 @@ def prependPackageToClassnames(urls, packageName):
 	('/Test/(.*)', 'PACKAGE.test')
 	>>> prependPackageToClassnames(('/Test/(.*)', 'test', '/Test/Test2', 'test2'), 'PACKAGE')
 	('/Test/(.*)', 'PACKAGE.test', '/Test/Test2', 'PACKAGE.test2')"""
-	lst = list(urls)
-	for i in xrange(1, len(lst), 2):
-  		lst[i] = packageName + "." + lst[i]
-
-	return tuple(lst)
+	newList = []
+	for url, endpoint in zip(urls[::2], urls[1::2]):
+		newList += [url, "{}.{}".format(packageName, endpoint)]
+	return tuple(newList)
 
 def importAllEndpointFiles(endpointDefinitions, urls):
 	""" Import all python files from endpointDefinitions and 
