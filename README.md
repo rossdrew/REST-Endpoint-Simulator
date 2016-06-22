@@ -1,5 +1,6 @@
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](MIT/Apache 2.0)
-[![Build Status](https://travis-ci.org/rossdrew/endpointSim.py.svg?branch=master)](https://travis-ci.org/rossdrew/endpointSim.py)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](MIT/Apache 2.0) 
+[![Build Status](https://travis-ci.org/rossdrew/endpointSim.py.svg?branch=master)](https://travis-ci.org/rossdrew/endpointSim.py) 
+[![Code Climate](https://codeclimate.com/github/rossdrew/endpointSim.py/badges/gpa.svg)](https://codeclimate.com/github/rossdrew/endpointSim.py)
 
 #endpointSim
 
