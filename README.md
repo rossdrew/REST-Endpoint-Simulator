@@ -1,5 +1,6 @@
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](MIT/Apache 2.0)
-[![Build Status](https://travis-ci.org/rossdrew/endpointSim.py.svg?branch=master)](https://travis-ci.org/rossdrew/endpointSim.py)
+ [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](MIT/Apache 2.0) 
+ [![Build Status](https://travis-ci.org/rossdrew/endpointSim.py.svg?branch=master)](https://travis-ci.org/rossdrew/endpointSim.py) 
+ [![Code Climate](https://codeclimate.com/github/rossdrew/endpointSim.py/badges/gpa.svg)](https://codeclimate.com/github/rossdrew/endpointSim.py)
 
 #endpointSim
 
@@ -13,7 +14,7 @@ To spin up an endpoint, create a Python script in the same directory, make sure 
 urls = ('/Test', 'test')
 ```
 
-Add (as in [web.py](http://webpy.org/)) a class and add a method with the name of the method type of the expected request, e.g. _GET_ and specify behaviour.
+Add (as in [web.py](http://webpy.org/)) a class with a method with the name of the HTTP method type of the expected request, e.g. _GET_ and specify behaviour.
 
 ```python
 class test:        

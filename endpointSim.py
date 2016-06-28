@@ -12,8 +12,6 @@ def prependPackageToClassnames(urls, packageName):
 	a packageName to each of the endpoint classnames, e.g.
 
 	('/Test/(.*)', 'test') becomes ('/Test/(.*)', 'Test.test')
-	
-	XXX There's probably a more Pythony way to do this
 
 	>>> prependPackageToClassnames(('/Test/(.*)', 'test'), 'PACKAGE')
 	('/Test/(.*)', 'PACKAGE.test')
