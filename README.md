@@ -14,7 +14,7 @@ To spin up an endpoint, create a Python script in the same directory, make sure 
 urls = ('/Test', 'test')
 ```
 
-Add (as in [web.py](http://webpy.org/)) a class and add a method with the name of the method type of the expected request, e.g. _GET_ and specify behaviour.
+Add (as in [web.py](http://webpy.org/)) a class with a method with the name of the HTTP method type of the expected request, e.g. _GET_ and specify behaviour.
 
 ```python
 class test:        
