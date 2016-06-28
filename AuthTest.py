@@ -11,7 +11,6 @@ allowed_users = ( #XXX Only works with two entries for some reason
     ('test','test')
 )
 
-#Isn't actually part of IntHub anymore
 class testAuth:
     def GET(self, name):
         auth = web.ctx.env.get('HTTP_AUTHORIZATION')
