@@ -39,6 +39,6 @@ python -m doctest endpointSim.py
 
  Included here are two examples:-
 
-  Test.py : An example enpoint that provides a response
-  AuthTest.py: An example endpoint with basic auth & JSON returned
+  - `Test.py` : An example enpoint that provides a response
+  - `AuthTest.py`: An example endpoint with basic auth & JSON returned
 
