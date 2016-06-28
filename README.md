@@ -35,3 +35,10 @@ Unit tests are run automatically and halt the script if they fail but they can b
 python -m doctest endpointSim.py
 ```
 
+#### Examples
+
+ Included here are two examples:-
+
+  Test.py : An example enpoint that provides a response
+  AuthTest.py: An example endpoint with basic auth & JSON returned
+
