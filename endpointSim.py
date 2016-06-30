@@ -4,7 +4,7 @@ import importlib
 import unittest, doctest
 from operator import itemgetter #sorting urls
 
-programID = "Endpoint Simulator v0.1"
+programID = "Endpoint Simulator v1.0"
 urls = ('/(.*)', 'base')
 
 def prependPackageToClassnames(urls, packageName):
