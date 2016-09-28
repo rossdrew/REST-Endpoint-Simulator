@@ -40,8 +40,8 @@ def importAllEndpointFiles(endpointDefinitions, urls):
 			urlList = prependPackageToClassnames(urlList, endpointFile)
 			completeUrlList += urlList
 			print "Imported {}.py presenting the endpoints {}".format(endpointFile, urlList)
-		except ImportError:
-			print "Cannot import {}".format(endpointFile)
+		except ImportError as ex:
+			print "Cannot import {}: {}".format(endpointFile, ex)
 
 	completeUrlList += urls
 	return completeUrlList
