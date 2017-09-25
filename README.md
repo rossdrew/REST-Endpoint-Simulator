@@ -2,11 +2,11 @@
  [![Build Status](https://travis-ci.org/rossdrew/endpointSim.py.svg?branch=master)](https://travis-ci.org/rossdrew/endpointSim.py) 
  [![Code Climate](https://codeclimate.com/github/rossdrew/endpointSim.py/badges/gpa.svg)](https://codeclimate.com/github/rossdrew/endpointSim.py)
 
-#endpointSim
+# Endpoint Simulator
 
 Python script to spin up some simple REST endpoints for simulating services. 
 
-#Usage
+# Usage
 
 To spin up an endpoint, create a Python script in the same directory, make sure there is a [web.py](http://webpy.org/) style URL mapping/class tuple structure to define the mapping and what endpoint class it should point to. Like so:-
 
